@@ -4,8 +4,8 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
-import { Navigation } from "@/components/navigation"
 import { Web3Provider } from "@/components/providers/web3-provider"
+import { ClientLayout } from "./client-layout"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,10 +25,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Web3Provider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-            <div className="min-h-screen bg-vault-dark">
-              <Navigation />
-              <main className="flex-1">{children}</main>
-            </div>
+            <ClientLayout>
+              {children}
+            </ClientLayout>
             <Toaster />
           </ThemeProvider>
         </Web3Provider>

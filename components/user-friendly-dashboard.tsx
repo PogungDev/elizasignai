@@ -333,11 +333,11 @@ export const UserFriendlyDashboard: React.FC<UserFriendlyDashboardProps> = ({
       if (result.visualUpdates) {
         setVaultDetails((prev) => ({
           ...prev,
-          riskScore: Math.max(0, Math.min(100, prev.riskScore + (result.visualUpdates.riskScoreChange || 0))),
-          ltvRatio: Math.max(0, Math.min(100, prev.ltvRatio + (result.visualUpdates.ltvChange || 0))),
-          currentYield: Math.max(0, prev.currentYield + (result.visualUpdates.yieldChange || 0)),
-          mevBlocked: prev.mevBlocked + (result.visualUpdates.mevBlockedIncrease || 0),
-          activeAlerts: Math.max(0, prev.activeAlerts + (result.visualUpdates.alertsChange || 0)),
+          riskScore: Math.max(0, Math.min(100, prev.riskScore + (result.visualUpdates?.riskScoreChange || 0))),
+          ltvRatio: Math.max(0, Math.min(100, prev.ltvRatio + (result.visualUpdates?.ltvChange || 0))),
+          currentYield: Math.max(0, prev.currentYield + (result.visualUpdates?.yieldChange || 0)),
+          mevBlocked: prev.mevBlocked + (result.visualUpdates?.mevBlockedIncrease || 0),
+          activeAlerts: Math.max(0, prev.activeAlerts + (result.visualUpdates?.alertsChange || 0)),
         }))
 
         setDataVisualizationTrigger({
@@ -909,7 +909,6 @@ export const UserFriendlyDashboard: React.FC<UserFriendlyDashboardProps> = ({
                           <ActionButton
                             label="RUN TEST"
                             onClick={() => handleTriggerAction(test.action)}
-                            size="sm"
                             className="w-full"
                           />
                         </div>

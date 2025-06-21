@@ -212,9 +212,9 @@ export function DataVisualization({ visualUpdateTrigger }: DataVisualizationProp
         const updatedData = { ...prev }
 
         if (visualUpdateTrigger.ltvChange) {
-          const lastLTV = prev.ltv[prev.ltv.length - 1]?.value || 50
-          updatedData.ltv = [
-            ...prev.ltv,
+          const lastLTV = prev.ltvRatio[prev.ltvRatio.length - 1]?.value || 50
+          updatedData.ltvRatio = [
+            ...prev.ltvRatio,
             {
               timestamp: newTimestamp,
               value: Math.max(0, Math.min(100, lastLTV + visualUpdateTrigger.ltvChange)),
@@ -223,9 +223,9 @@ export function DataVisualization({ visualUpdateTrigger }: DataVisualizationProp
         }
 
         if (visualUpdateTrigger.yieldChange) {
-          const lastYield = prev.yield[prev.yield.length - 1]?.value || 100000
-          updatedData.yield = [
-            ...prev.yield,
+          const lastYield = prev.yieldRate[prev.yieldRate.length - 1]?.value || 100000
+          updatedData.yieldRate = [
+            ...prev.yieldRate,
             {
               timestamp: newTimestamp,
               value: lastYield + visualUpdateTrigger.yieldChange * 1000,
@@ -397,14 +397,14 @@ export function DataVisualization({ visualUpdateTrigger }: DataVisualizationProp
         <TabsContent value="overview" className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <SimpleLineChart
-              data={historicalData.ltv}
+              data={historicalData.ltvRatio}
               title="Average LTV Ratio"
               color="#6366f1"
               valueType="percentage"
               recentUpdate={visualUpdateTrigger?.ltvChange ? lastUpdateTimestamp : undefined}
             />
             <SimpleLineChart
-              data={historicalData.yield}
+              data={historicalData.yieldRate}
               title="Cumulative Yield"
               color="#10b981"
               valueType="currency"
@@ -429,7 +429,7 @@ export function DataVisualization({ visualUpdateTrigger }: DataVisualizationProp
         <TabsContent value="liquidation" className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <SimpleLineChart
-              data={historicalData.ltv}
+              data={historicalData.ltvRatio}
               title="LTV Trend (30 Days)"
               color="#ef4444"
               valueType="percentage"
@@ -478,7 +478,7 @@ export function DataVisualization({ visualUpdateTrigger }: DataVisualizationProp
         <TabsContent value="yield" className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <SimpleLineChart
-              data={historicalData.yield}
+              data={historicalData.yieldRate}
               title="Yield Performance"
               color="#10b981"
               valueType="currency"

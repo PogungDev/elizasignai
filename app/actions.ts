@@ -46,7 +46,12 @@ export async function getElizaAIResponse(options: ElizaAIOptions): Promise<{
   const lowerMessage = userMessage.toLowerCase()
   let responseText = ""
   let actionToTrigger: string | null = null
-  let elizaSignDecisionResult: ElizaAIOptions["elizaSignDecision"] | undefined
+  let elizaSignDecisionResult: {
+    decision: string
+    feedback: string
+    type: "success" | "warning" | "error"
+    chainlinkServicesUsed: string[]
+  } | undefined
 
   // ElizaSign AI specific logic
   if (lowerMessage.includes("simulate transaction") && toAddress && amount && riskLevel && agentConfig) {
