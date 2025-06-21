@@ -1,0 +1,113 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/faliqulfikri/Documents/chainlinkjuni/elizasignai/contracts/MEVProtector.sol": {
+      "lastModificationDate": 1750483731851,
+      "contentHash": "2c2d573db57a284168460bdb8ed0f619",
+      "sourceName": "contracts/MEVProtector.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "MEVProtector"
+      ]
+    },
+    "/Users/faliqulfikri/Documents/chainlinkjuni/elizasignai/contracts/VaultGuardOracle.sol": {
+      "lastModificationDate": 1750487734637,
+      "contentHash": "750101ea508f9ef2a23ebec6362b30eb",
+      "sourceName": "contracts/VaultGuardOracle.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "VaultGuardOracle"
+      ]
+    },
+    "/Users/faliqulfikri/Documents/chainlinkjuni/elizasignai/contracts/YieldOptimizer.sol": {
+      "lastModificationDate": 1750483731851,
+      "contentHash": "1a8500ff5135be7efae0be90f8951e52",
+      "sourceName": "contracts/YieldOptimizer.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "YieldOptimizer"
+      ]
+    }
+  }
+}
